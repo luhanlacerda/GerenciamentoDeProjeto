@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.gerente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace GerenciamentoDeProjeto
 {
     public partial class TelaConsultaGerente : Form
     {
+        List<Gerente> gerentes = new List<Gerente>();
         public TelaConsultaGerente()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gerentes.Count; i++)
+            {
+                ListViewItem linha = listViewGerentes.Items.Add(i.ToString());
+               //linha.SubItems.Add(gerentes.ElementAt(i));
+            }
         }
     }
 }
