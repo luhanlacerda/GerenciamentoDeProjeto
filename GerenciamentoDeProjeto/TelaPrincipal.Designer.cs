@@ -66,12 +66,14 @@
             this.testarConexãoToolStripMenuItem.Name = "testarConexãoToolStripMenuItem";
             this.testarConexãoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.testarConexãoToolStripMenuItem.Text = "Testar Conexão";
+            this.testarConexãoToolStripMenuItem.Click += new System.EventHandler(this.testarConexãoToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // gerentesToolStripMenuItem
             // 
@@ -117,7 +119,9 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
