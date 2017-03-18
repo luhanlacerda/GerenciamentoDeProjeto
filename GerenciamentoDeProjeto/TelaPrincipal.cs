@@ -42,5 +42,26 @@ namespace GerenciamentoDeProjeto
         {
             Application.Exit();
         }
+
+        TelaCadastroGerente TelaCadastrarGerente;
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (TelaCadastrarGerente == null)
+            {
+                TelaCadastrarGerente = new TelaCadastroGerente();
+                TelaCadastrarGerente.MdiParent = this;
+                TelaCadastrarGerente.FormClosed += TelaCadastrarGerente_FormClosed;
+                TelaCadastrarGerente.Show(); 
+            }
+            else
+            {
+                TelaCadastrarGerente.Activate();
+            }
+        }
+
+        private void TelaCadastrarGerente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaCadastrarGerente = null;
+        }
     }
 }

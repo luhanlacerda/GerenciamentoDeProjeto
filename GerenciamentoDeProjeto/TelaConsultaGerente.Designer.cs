@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoDeProjeto
 {
-    partial class TelaCadastroGerente
+    partial class TelaConsultaGerente
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.boxCodigos = new System.Windows.Forms.NumericUpDown();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.boxCodigos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 36);
+            this.label1.Location = new System.Drawing.Point(27, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
@@ -47,66 +46,48 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(96, 36);
+            this.textBoxNome.Location = new System.Drawing.Point(71, 31);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(137, 20);
+            this.textBoxNome.Size = new System.Drawing.Size(145, 20);
             this.textBoxNome.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 92);
+            this.label2.Location = new System.Drawing.Point(248, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Código:";
             // 
-            // boxCodigos
+            // textBoxCodigo
             // 
-            this.boxCodigos.Location = new System.Drawing.Point(96, 92);
-            this.boxCodigos.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.boxCodigos.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.boxCodigos.Name = "boxCodigos";
-            this.boxCodigos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.boxCodigos.Size = new System.Drawing.Size(52, 20);
-            this.boxCodigos.TabIndex = 3;
-            this.boxCodigos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.textBoxCodigo.Location = new System.Drawing.Point(297, 31);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCodigo.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(158, 172);
+            this.button1.Location = new System.Drawing.Point(322, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Cadastrar";
+            this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TelaCadastroGerente
+            // TelaConsultaGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(426, 313);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.boxCodigos);
+            this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label1);
-            this.Name = "TelaCadastroGerente";
-            this.Text = "TelaCadastroGerente";
-            ((System.ComponentModel.ISupportInitialize)(this.boxCodigos)).EndInit();
+            this.Name = "TelaConsultaGerente";
+            this.Text = "TelaConsultaGerente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +98,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown boxCodigos;
+        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="TelaCadastroGerente.Designer.cs">
       <DependentUpon>TelaCadastroGerente.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaConsultaGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaConsultaGerente.Designer.cs">
+      <DependentUpon>TelaConsultaGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="TelaCadastroGerente.resx">
       <DependentUpon>TelaCadastroGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaConsultaGerente.resx">
+      <DependentUpon>TelaConsultaGerente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
