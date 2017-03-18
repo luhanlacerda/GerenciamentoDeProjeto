@@ -36,6 +36,7 @@
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,9 +96,17 @@
             // 
             // projetoToolStripMenuItem
             // 
+            this.projetoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem1});
             this.projetoToolStripMenuItem.Name = "projetoToolStripMenuItem";
             this.projetoToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.projetoToolStripMenuItem.Text = "Projeto";
+            // 
+            // cadastrarToolStripMenuItem1
+            // 
+            this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             // 
             // TelaPrincipal
             // 
@@ -126,5 +135,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projetoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem1;
     }
 }
