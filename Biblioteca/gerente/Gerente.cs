@@ -8,7 +8,7 @@ namespace Biblioteca.gerente
 {
     public class Gerente
     {
-        public  int numero { get; set; }
-        public String nome { get; set; }
+        public  int Nr_Gerente { get; set; }
+        public String Nm_Gerente { get; set; }
     }
 }

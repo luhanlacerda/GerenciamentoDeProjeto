@@ -13,18 +13,52 @@ namespace GerenciamentoDeProjeto
 {
     public partial class TelaConsultaGerente : Form
     {
-        List<Gerente> gerentes = new List<Gerente>();
+       
         public TelaConsultaGerente()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonPesquisar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < gerentes.Count; i++)
+            listViewGerentes.Items.Clear();
+            try
             {
-                ListViewItem linha = listViewGerentes.Items.Add(i.ToString());
-               //linha.SubItems.Add(gerentes.ElementAt(i));
+                List<Gerente> gerentes = TelaPrincipal.GerenteNegocio.Selecionar(new Gerente());
+
+                foreach (Gerente gerente in gerentes)
+                {
+                    ListViewItem linha = listViewGerentes.Items.Add(gerente.Nr_Gerente.ToString());
+                    linha.SubItems.Add(gerente.Nm_Gerente.ToString());
+                }
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void buttonDeletar_Click(object sender, EventArgs e)
+        {
+            if (listViewGerentes.SelectedItems.Count > 0)
+            {
+                ListViewItem selected = listViewGerentes.SelectedItems.Cast<ListViewItem>().ToList().ElementAt(0);
+                Gerente gerente = new Gerente()
+                {
+                    Nr_Gerente = Convert.ToInt32(selected.Text)
+                };
+
+                try
+                {
+                    TelaPrincipal.GerenteNegocio.Remover(gerente);
+                    listViewGerentes.Items.Remove(selected);
+                    MessageBox.Show("Gerente excluído com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

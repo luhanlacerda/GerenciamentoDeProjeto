@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.gerente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,16 @@ namespace GerenciamentoDeProjeto
 {
     public partial class TelaPrincipal : Form
     {
+
+        private static GerenteNegocio gerenteNegocio = new GerenteNegocio();
+        public static GerenteNegocio GerenteNegocio
+        {
+            get
+            {
+                return gerenteNegocio;
+            }
+        }
+
         public TelaPrincipal()
         {
             InitializeComponent();
@@ -62,6 +73,27 @@ namespace GerenciamentoDeProjeto
         private void TelaCadastrarGerente_FormClosed(object sender, FormClosedEventArgs e)
         {
             TelaCadastrarGerente = null;
+        }
+
+        TelaConsultaGerente TelaConsultarGerente;
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (TelaConsultarGerente == null)
+            {
+                TelaConsultarGerente = new TelaConsultaGerente();
+                TelaConsultarGerente.MdiParent = this;
+                TelaConsultarGerente.FormClosed += TelaConsultarGerente_FormClosed;
+                TelaConsultarGerente.Show();
+            }
+            else
+            {
+                TelaConsultarGerente.Activate();
+            }
+        }
+
+        private void TelaConsultarGerente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaConsultarGerente = null;
         }
     }
 }
