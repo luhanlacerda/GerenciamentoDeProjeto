@@ -24,8 +24,8 @@ namespace GerenciamentoDeProjeto
             {
                 Gerente gerente = new Gerente()
                 {
-                    nome = textBoxNome.Text,
-                    numero = Convert.ToInt32(boxCodigos.Value)
+                    Nm_Gerente = textBoxNome.Text,
+                    Nr_Gerente = Convert.ToInt32(boxCodigos.Value)
                 };
 
                 GerenteDados conn = new GerenteDados();

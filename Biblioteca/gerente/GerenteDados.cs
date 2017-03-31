@@ -17,15 +17,15 @@ namespace Biblioteca.gerente
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "INSERT INTO Gerente (Nr_Gerente, Nm_Gerente) VALUES(@numero,@nome)";
+                string sql = "INSERT INTO Gerente (Nr_Gerente, Nm_Gerente) VALUES(@Nr_Gerente,@Nm_Gerente)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@numero", SqlDbType.Int);
-                cmd.Parameters["@numero"].Value = gerente.numero;
+                cmd.Parameters.Add("@Nr_Gerente", SqlDbType.Int);
+                cmd.Parameters["@Nr_Gerente"].Value = gerente.Nr_Gerente;
 
-                cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-                cmd.Parameters["@nome"].Value = gerente.nome;
+                cmd.Parameters.Add("@Nm_Gerente", SqlDbType.VarChar);
+                cmd.Parameters["@Nm_Gerente"].Value = gerente.Nm_Gerente;
 
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
@@ -46,15 +46,15 @@ namespace Biblioteca.gerente
             {
                 //abrindo conexão
                 this.abrirConexao();
-                string sql = "UPDATE Gerente SET Nr_Gerente = @numero, Nm_Gerente = @nome WHERE Nr_Gerente = @numero";
+                string sql = "UPDATE Gerente SET Nr_Gerente = @Nr_Gerente, Nm_Gerente = @Nm_Gerente WHERE Nr_Gerente = @Nr_Gerente";
                 //instrução a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@numero", SqlDbType.Int);
-                cmd.Parameters["@numero"].Value = gerente.numero;
+                cmd.Parameters.Add("@Nr_Gerente", SqlDbType.Int);
+                cmd.Parameters["@Nr_Gerente"].Value = gerente.Nr_Gerente;
 
-                cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-                cmd.Parameters["@nome"].Value = gerente.nome;
+                cmd.Parameters.Add("@Nm_Gerente", SqlDbType.VarChar);
+                cmd.Parameters["@Nm_Gerente"].Value = gerente.Nm_Gerente;
 
                 //executando a instrução
                 cmd.ExecuteNonQuery();
@@ -75,12 +75,12 @@ namespace Biblioteca.gerente
             {
                 //abrindo conexão
                 this.abrirConexao();
-                string sql = "DELETE FROM gerente WHERE Nr_Gerente = @numero";
+                string sql = "DELETE FROM gerente WHERE Nr_Gerente = @Nr_Gerente";
                 //instrução a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@numero", SqlDbType.Int);
-                cmd.Parameters["@numero"].Value = gerente.numero;
+                cmd.Parameters.Add("@Nr_Gerente", SqlDbType.Int);
+                cmd.Parameters["@Nr_Gerente"].Value = gerente.Nr_Gerente;
 
                 //executando a instrução
                 cmd.ExecuteNonQuery();
@@ -102,30 +102,30 @@ namespace Biblioteca.gerente
             {
                 this.abrirConexao();
                 //instrucao a ser executada
-                string sql = "SELECT Nr_Gerente, Nm_Gerente FROM Gerente WHERE Nr_Numero = Nr_Numero ";
+                string sql = "SELECT Nr_Gerente, Nm_Gerente FROM Gerente WHERE Nr_Gerente = Nr_Gerente";
                 //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-                if (filtro.numero > 0)
+                if (filtro.Nr_Gerente > 0)
                 {
-                    sql += " AND Nr_Numero = @numero";
+                    sql += " AND Nr_Numero = @Nr_Gerente";
                 }
                 //se foi passada um nome válido, este nome entrará como critério de filtro
-                if (filtro.nome != null && filtro.nome.Trim().Equals("") == false)
+                if (filtro.Nm_Gerente != null && filtro.Nm_Gerente.Trim().Equals("") == false)
                 {
-                    sql += " AND Nm_Nome LIKE '%@nome%'";
+                    sql += " AND Nm_Nome LIKE '%@Nm_Gerente%'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
                 //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-                if (filtro.numero > 0)
+                if (filtro.Nr_Gerente > 0)
                 {
-                    cmd.Parameters.Add("@numero", SqlDbType.Int);
-                    cmd.Parameters["@numero"].Value = filtro.numero;
+                    cmd.Parameters.Add("@Nr_Gerente", SqlDbType.Int);
+                    cmd.Parameters["@Nr_Gerente"].Value = filtro.Nr_Gerente;
                 }
                 //se foi passada um nome válido, este nome entrará como critério de filtro
-                if (filtro.nome != null && filtro.nome.Trim().Equals("") == false)
+                if (filtro.Nm_Gerente != null && filtro.Nm_Gerente.Trim().Equals("") == false)
                 {
-                    cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-                    cmd.Parameters["@nome"].Value = filtro.nome;
+                    cmd.Parameters.Add("@Nm_Gerente", SqlDbType.VarChar);
+                    cmd.Parameters["@Nm_Gerente"].Value = filtro.Nm_Gerente;
 
                 }
                 //executando a instrucao e colocando o resultado em um leitor
@@ -135,8 +135,8 @@ namespace Biblioteca.gerente
                 {
                     Gerente gerente = new Gerente();
                     //acessando os valores das colunas do resultado
-                    gerente.numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
-                    gerente.nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    gerente.Nr_Gerente = DbReader.GetInt32(DbReader.GetOrdinal("Nr_Gerente"));
+                    gerente.Nm_Gerente = DbReader.GetString(DbReader.GetOrdinal("Nm_Gerente"));
                     retorno.Add(gerente);
                 }
                 //fechando o leitor de resultados
@@ -161,10 +161,10 @@ namespace Biblioteca.gerente
             {
                 this.abrirConexao();
                 //instrução a ser executada
-                string sql = "SELECT Nr_Gerente, Nm_Gerente FROM Gerente WHERE Nr_Gerente = @numero";
+                string sql = "SELECT Nr_Gerente, Nm_Gerente FROM Gerente WHERE Nr_Gerente = @Nr_Gerente";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
-                cmd.Parameters.Add("@numero", SqlDbType.Int);
-                cmd.Parameters["@numero"].Value = gerente.numero;
+                cmd.Parameters.Add("@Nr_Gerente", SqlDbType.Int);
+                cmd.Parameters["@Nr_Gerente"].Value = gerente.Nr_Gerente;
                 //executando a instrução
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 //lendo o resultado

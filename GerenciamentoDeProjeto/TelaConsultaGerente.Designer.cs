@@ -32,11 +32,11 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonPesquisar = new System.Windows.Forms.Button();
             this.listViewGerentes = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
             this.Código = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonDeletar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -71,15 +71,15 @@
             this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
             this.textBoxCodigo.TabIndex = 3;
             // 
-            // button1
+            // buttonPesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(340, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonPesquisar.Location = new System.Drawing.Point(340, 71);
+            this.buttonPesquisar.Name = "buttonPesquisar";
+            this.buttonPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.buttonPesquisar.TabIndex = 4;
+            this.buttonPesquisar.Text = "Pesquisar";
+            this.buttonPesquisar.UseVisualStyleBackColor = true;
+            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
             // listViewGerentes
             // 
@@ -88,33 +88,45 @@
             this.Nome});
             this.listViewGerentes.FullRowSelect = true;
             this.listViewGerentes.Location = new System.Drawing.Point(30, 111);
+            this.listViewGerentes.MultiSelect = false;
             this.listViewGerentes.Name = "listViewGerentes";
             this.listViewGerentes.Size = new System.Drawing.Size(385, 171);
             this.listViewGerentes.TabIndex = 5;
             this.listViewGerentes.UseCompatibleStateImageBehavior = false;
+            this.listViewGerentes.View = System.Windows.Forms.View.Details;
             // 
-            // button2
+            // Código
             // 
-            this.button2.Location = new System.Drawing.Point(340, 301);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Deletar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Código.Text = "Código";
+            // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            // 
+            // buttonDeletar
+            // 
+            this.buttonDeletar.Location = new System.Drawing.Point(340, 301);
+            this.buttonDeletar.Name = "buttonDeletar";
+            this.buttonDeletar.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeletar.TabIndex = 6;
+            this.buttonDeletar.Text = "Deletar";
+            this.buttonDeletar.UseVisualStyleBackColor = true;
+            this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
             // 
             // TelaConsultaGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 336);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.listViewGerentes);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonPesquisar);
             this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label1);
             this.Name = "TelaConsultaGerente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaConsultaGerente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,9 +139,9 @@
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCodigo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonPesquisar;
         private System.Windows.Forms.ListView listViewGerentes;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDeletar;
         private System.Windows.Forms.ColumnHeader Código;
         private System.Windows.Forms.ColumnHeader Nome;
     }
