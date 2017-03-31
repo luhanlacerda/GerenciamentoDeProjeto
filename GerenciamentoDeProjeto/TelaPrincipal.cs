@@ -63,5 +63,22 @@ namespace GerenciamentoDeProjeto
         {
             TelaCadastrarGerente = null;
         }
+
+        TelaConsultaGerente TelaConsultarGerente;
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (TelaConsultarGerente == null)
+            {
+                TelaConsultarGerente = new TelaConsultaGerente();
+                TelaConsultarGerente.MdiParent = this;
+                TelaConsultarGerente.FormClosed += TelaConsultarGerente_FormClosed;
+                TelaConsultarGerente.Show();
+            }
+        }
+
+        private void TelaConsultarGerente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaConsultarGerente = null;
+        }
     }
 }

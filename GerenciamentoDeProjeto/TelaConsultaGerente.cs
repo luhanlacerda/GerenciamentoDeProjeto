@@ -26,6 +26,8 @@ namespace GerenciamentoDeProjeto
                 ListViewItem linha = listViewGerentes.Items.Add(i.ToString());
                //linha.SubItems.Add(gerentes.ElementAt(i));
             }
+            GerenteDados conn = new GerenteDados();
+            conn.Selecionar();
         }
     }
 }
