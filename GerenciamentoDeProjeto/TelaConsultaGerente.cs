@@ -19,6 +19,7 @@ namespace GerenciamentoDeProjeto
             InitializeComponent();
         }
 
+
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             listViewGerentes.Items.Clear();
